@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/variablfont/static/css/main.a055f8e0.chunk.css",
+    "main.js": "/variablfont/static/js/main.75068507.chunk.js",
+    "main.js.map": "/variablfont/static/js/main.75068507.chunk.js.map",
+    "runtime-main.js": "/variablfont/static/js/runtime-main.65e8375f.js",
+    "runtime-main.js.map": "/variablfont/static/js/runtime-main.65e8375f.js.map",
+    "static/js/2.ea08ce3a.chunk.js": "/variablfont/static/js/2.ea08ce3a.chunk.js",
+    "static/js/2.ea08ce3a.chunk.js.map": "/variablfont/static/js/2.ea08ce3a.chunk.js.map",
+    "index.html": "/variablfont/index.html",
+    "static/css/main.a055f8e0.chunk.css.map": "/variablfont/static/css/main.a055f8e0.chunk.css.map",
+    "static/js/2.ea08ce3a.chunk.js.LICENSE.txt": "/variablfont/static/js/2.ea08ce3a.chunk.js.LICENSE.txt",
+    "static/media/fontFace.css": "/variablfont/static/media/SourceSans3VF-Roman.5eecd9c3.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.65e8375f.js",
+    "static/js/2.ea08ce3a.chunk.js",
+    "static/css/main.a055f8e0.chunk.css",
+    "static/js/main.75068507.chunk.js"
+  ]
+}
