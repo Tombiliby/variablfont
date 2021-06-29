@@ -1,0 +1,31 @@
+@font-face {
+  font-family: "Decovar";
+  src: url("DecovarAlpha-VF.subset.ttf") format("truetype-variations");
+}
+
+@font-face {
+  font-family: "Source Sans";
+  src: url("SourceSans3VF-Roman.ttf") format("truetype-variations");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("Montserrat-VF.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Montserrat italic";
+  src: url("Montserrat-Italic-VF.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("Fraunces[SOFT,WONK,opsz,wght].woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Fraunces italic";
+  src: url("Fraunces-Italic[SOFT,WONK,opsz,wght].woff2") format("woff2");
+}
+
+/*@import url('https://fonts.googleapis.com/css2?family=Kufam:wght@640&display=swap');*/

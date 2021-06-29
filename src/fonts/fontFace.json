@@ -1,0 +1,116 @@
+[
+  {
+    "name": "Decovar",
+    "variations": [
+      {
+        "name": "BLDA",
+        "defaultVal": 200,
+        "minVal": 0,
+        "maxVal": 1000
+      },
+      {
+        "name": "TRMC",
+        "defaultVal": 900,
+        "minVal": 0,
+        "maxVal": 1000
+      },
+      {
+        "name": "TRMK",
+        "defaultVal": 400,
+        "minVal": 0,
+        "maxVal": 1000
+      }
+    ]
+  },
+  {
+    "name": "Source Sans",
+    "variations": [
+      {
+        "name": "wght",
+        "defaultVal": 500,
+        "minVal": 200,
+        "maxVal": 900
+      }
+    ]
+  },
+  {
+    "name": "Montserrat",
+    "variations": [
+      {
+        "name": "wght",
+        "defaultVal": 400,
+        "minVal": 100,
+        "maxVal": 900
+      }
+    ]
+  },
+  {
+    "name": "Montserrat italic",
+    "variations": [
+      {
+        "name": "wght",
+        "defaultVal": 400,
+        "minVal": 100,
+        "maxVal": 900
+      }
+    ]
+  },
+  {
+    "name": "Fraunces",
+    "variations": [
+      {
+        "name": "opsz",
+        "defaultVal": 400,
+        "minVal": 9,
+        "maxVal": 144
+      },
+      {
+        "name": "wght",
+        "defaultVal": 400,
+        "minVal": 100,
+        "maxVal": 900
+      },
+      {
+        "name": "SOFT",
+        "defaultVal": 400,
+        "minVal": 0,
+        "maxVal": 100
+      },
+      {
+        "name": "WONK",
+        "defaultVal": 0,
+        "minVal": 0,
+        "maxVal": 1
+      }
+    ]
+  },
+  {
+    "name": "Fraunces italic",
+    "variations": [
+      {
+        "name": "opsz",
+        "defaultVal": 400,
+        "minVal": 9,
+        "maxVal": 144
+      },
+      {
+        "name": "wght",
+        "defaultVal": 400,
+        "minVal": 100,
+        "maxVal": 900
+      },
+      {
+        "name": "SOFT",
+        "defaultVal": 400,
+        "minVal": 0,
+        "maxVal": 100
+      },
+      {
+        "name": "WONK",
+        "defaultVal": 0,
+        "minVal": 0,
+        "maxVal": 1
+      }
+    ]
+  }
+]
