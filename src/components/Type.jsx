@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import useVariableFont from "react-variable-fonts";
 import Slider from "./Slider"
-import "../fonts/fontFace.css"
 
 const Type = ({ name, variations, applyFont }) => {
 

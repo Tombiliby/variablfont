@@ -1,6 +1,7 @@
 [
   {
     "name": "Decovar",
+    "fileName": "DecovarAlpha-VF.subset.ttf",
     "variations": [
       {
         "name": "BLDA",
@@ -24,6 +25,7 @@
   },
   {
     "name": "Source Sans",
+    "fileName": "SourceSans3VF-Roman.ttf",
     "variations": [
       {
         "name": "wght",
@@ -35,6 +37,7 @@
   },
   {
     "name": "Montserrat",
+    "fileName": "Montserrat-VF.woff2",
     "variations": [
       {
         "name": "wght",
@@ -46,6 +49,7 @@
   },
   {
     "name": "Montserrat italic",
+    "fileName": "Montserrat-Italic-VF.woff2",
     "variations": [
       {
         "name": "wght",
@@ -57,6 +61,7 @@
   },
   {
     "name": "Fraunces",
+    "fileName": "Fraunces[SOFT,WONK,opsz,wght].woff2",
     "variations": [
       {
         "name": "opsz",
@@ -86,6 +91,7 @@
   },
   {
     "name": "Fraunces italic",
+    "fileName": "Fraunces-Italic[SOFT,WONK,opsz,wght].woff2",
     "variations": [
       {
         "name": "opsz",
@@ -110,6 +116,42 @@
         "defaultVal": 0,
         "minVal": 0,
         "maxVal": 1
+      }
+    ]
+  },
+  {
+    "name": "Minipax",
+    "fileName": "Minipax_Variable.ttf",
+    "variations": [
+      {
+        "name": "wght",
+        "defaultVal": 500,
+        "minVal": 100,
+        "maxVal": 600
+      }
+    ]
+  },
+  {
+    "name": "Caveat",
+    "fileName": "Caveat-VariableFont_wght.ttf",
+    "variations": [
+      {
+        "name": "wght",
+        "defaultVal": 500,
+        "minVal": 400,
+        "maxVal": 700
+      }
+    ]
+  },
+  {
+    "name": "Dancing Script",
+    "fileName": "DancingScript-VariableFont_wght.ttf",
+    "variations": [
+      {
+        "name": "wght",
+        "defaultVal": 500,
+        "minVal": 400,
+        "maxVal": 700
       }
     ]
   }

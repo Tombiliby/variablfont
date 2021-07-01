@@ -21,7 +21,7 @@ const OutsideFocus = ({ onFocusField, children }) => {
     return () => {
       document.removeEventListener("mouseup", handleClick);
     };
-  }, []);
+  });
 
   return (
     <div className="h-full" ref={outsideRef}>
