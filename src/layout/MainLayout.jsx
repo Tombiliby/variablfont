@@ -68,6 +68,11 @@ const MainLayout = () => {
 
   return (
     <stylePatternContext.Provider value={{ state, dispatch }}>
+      <div className="text-red-600 text-2xl">
+        TODO :
+        "homepage": "https://tombiliby.github.io/variablfont/",
+        dans le package.json
+      </div>
       <Types className={`${!isFocus ? "transform -translate-x-full" : "shadow-2xl"} transition-transform transition-shadow`} dispatch={dispatch} selectedField={state.selectedField} />
       <OutsideFocus onFocusField={onFocusField}>
         <div className={`${isFocus ? "transform translate-x-52" : ""} origin-center transition-transform p-8 md:p-24 md:pb-2 lg:flex items-center`}>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { addFont } from "../fonts/fontFace"
 import typeList from "../fonts/fontFace.json"
 import Type from "./Type"
 
@@ -23,6 +24,12 @@ const Types = ({ className, dispatch, selectedField }) => {
     dispatch({ type: "set_font", fontUpdate: fontUpdate, selectedField: selectedField })
 
   }
+
+  // Add fonts files
+  typeList.forEach(font => {
+    addFont(font.name, font.fileName)
+  })
+
 
   return (
     <div className={`p-4 bg-white h-screen fixed z-30 w-64 overflow-y-auto ${className}`}>
