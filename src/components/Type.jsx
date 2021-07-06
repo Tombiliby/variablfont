@@ -36,7 +36,7 @@ const Type = ({ name, variations, applyFont }) => {
           </div>
         )
       })}
-      <button onClick={() => applyFont(name, stateVariation)} className="rounded py-1 px-3 bg-green-200  group-hover:bg-green-800 group-hover:text-white block w-full mt-4 ">Apply</button>
+      <button onClick={() => applyFont(name, stateVariation)} className="rounded py-1 px-3 bg-blue-800 text-white block w-full mt-4 ">Apply</button>
     </div>
   )
 }

@@ -1,12 +1,13 @@
-import React, { useReducer, useState } from 'react'
+import React, { useReducer } from 'react'
 import stylePatternContext from '../contexts/stylePattern';
-import Types from "../components/Types";
-import ArticlePattern from "../components/ArticlePattern";
+import { addFont } from "../fonts/fontFace"
 import customFontsReducer from '../reducer/customFontsReducer';
-import OutsideFocus from '../components/OutsideFocus';
-import Cards from '../components/Cards';
+import firebase from "firebase/app";
+import "firebase/firestore";
+import '../firebase/conf'
+import { useCollectionData } from 'react-firebase-hooks/firestore';
 
-const MainLayout = () => {
+const MainLayout = ({ children }) => {
 
   const initialStylePattern = {
     selectedField: "",
@@ -52,34 +53,28 @@ const MainLayout = () => {
       }
     }
   }
-  const [isFocus, setIsFocus] = useState(false)
   const [state, dispatch] = useReducer(customFontsReducer, initialStylePattern);
 
-  const onFocusField = (isFocus, fieldName) => {
-    if (isFocus) {
-      setIsFocus(true)
-      dispatch({ type: "set_selectedField", selectedField: fieldName })
-      return
-    } else {
-      setIsFocus(false)
-      dispatch({ type: "set_selectedField", selectedField: "" })
+  const [fonts, loading, error] = useCollectionData(
+    firebase.firestore().collection('fonts').orderBy('name'),
+    {
+      snapshotListenOptions: { includeMetadataChanges: true },
     }
+  );
+
+  if (error) {
+    console.log(error)
+  }
+  if (!loading) {
+    fonts.forEach(font => {
+      addFont(font.name, font.fileName)
+    })
   }
 
   return (
     <stylePatternContext.Provider value={{ state, dispatch }}>
-      <div className="text-red-600 text-2xl">
-        TODO :
-        "homepage": "https://tombiliby.github.io/variablfont/",
-        dans le package.json
-      </div>
-      <Types className={`${!isFocus ? "transform -translate-x-full" : "shadow-2xl"} transition-transform transition-shadow`} dispatch={dispatch} selectedField={state.selectedField} />
-      <OutsideFocus onFocusField={onFocusField}>
-        <div className={`${isFocus ? "transform translate-x-52" : ""} origin-center transition-transform p-8 md:p-24 md:pb-2 lg:flex items-center`}>
-          <ArticlePattern className={`flex-1`} onFocusField={onFocusField} />
-          <Cards className={`flex-1  lg:ml-6  xl:ml-12`} onFocusField={onFocusField} />
-        </div>
-      </OutsideFocus>
+      {loading && (<div>Loading...</div>)}
+      {children}
     </stylePatternContext.Provider>
   )
 }

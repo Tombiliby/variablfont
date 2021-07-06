@@ -5,7 +5,7 @@ export const addFont = (name, fileNameWithExt) => {
   font.load().then(function (loaded_face) {
     document.fonts.add(loaded_face)
     //fontLoading()
-    document.body.style.fontFamily = `${name}, monospace`;
+    //document.body.style.fontFamily = `${name}, monospace`;
   }).catch(function (error) {
     if (error) {
       console.log(error)
