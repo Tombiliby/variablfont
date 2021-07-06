@@ -1,9 +1,18 @@
 import React from 'react'
-import { addFont } from "../fonts/fontFace"
-import typeList from "../fonts/fontFace.json"
+import firebase from "firebase/app";
+import "firebase/firestore";
+import '../firebase/conf'
+import { useCollectionData } from 'react-firebase-hooks/firestore';
 import Type from "./Type"
 
 const Types = ({ className, dispatch, selectedField }) => {
+
+  const [values, loading, error] = useCollectionData(
+    firebase.firestore().collection('fonts').orderBy('name'),
+    {
+      snapshotListenOptions: { includeMetadataChanges: true },
+    }
+  );
 
   const applyFont = (name, stateVariation) => {
     if (selectedField === "") {
@@ -25,21 +34,18 @@ const Types = ({ className, dispatch, selectedField }) => {
 
   }
 
-  // Add fonts files
-  typeList.forEach(font => {
-    addFont(font.name, font.fileName)
-  })
-
-
   return (
     <div className={`p-4 bg-white h-screen fixed z-30 w-64 overflow-y-auto ${className}`}>
-      {typeList.map((type, i) => {
-        return (
+      {error && <strong>Error: {JSON.stringify(error)}</strong>}
+      {loading && <span>Collection: Loading...</span>}
+
+      {values && (
+        values.map((font, i) => (
           <div key={i}>
-            <Type name={type.name} variations={type.variations} applyFont={applyFont} />
+            <Type name={font.name} variations={font.variations} applyFont={applyFont} />
           </div>
-        )
-      })}
+        ))
+      )}
     </div>
   )
 }

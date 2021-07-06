@@ -2,30 +2,29 @@ import React from 'react'
 import firebase from "firebase/app";
 import "firebase/firestore";
 import '../firebase/conf'
-import { useCollection } from 'react-firebase-hooks/firestore';
+import { useCollectionData } from 'react-firebase-hooks/firestore';
+import Type from '../components/Type';
 
 const Firebase = () => {
-  const [value, loading, error] = useCollection(
+  const [values, loading, error] = useCollectionData(
     firebase.firestore().collection('fonts'),
     {
       snapshotListenOptions: { includeMetadataChanges: true },
     }
   );
 
-  if (value) {
-    console.log(value.docs)
-  }
-
+  console.log(values)
   return (
     <div>
       {error && <strong>Error: {JSON.stringify(error)}</strong>}
       {loading && <span>Collection: Loading...</span>}
-      {value && (
-        value.docs.map(doc => (
-          <div key={doc.id}>
-            {doc.id}
+      {values && (
+        values.map((font, i) => (
+          <div key={i}>
+            {font.id}
             <div>
-              {JSON.stringify(doc.data())},{' '}
+              <Type name={font.name} variations={font.variations} />
+              {JSON.stringify(font)},{' '}
             </div>
           </div>
         ))

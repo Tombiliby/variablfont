@@ -18,5 +18,7 @@ module.exports = {
       ringColor: ['hover', 'focus'],
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms')
+  ],
 }
