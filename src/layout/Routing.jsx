@@ -4,7 +4,7 @@ import PageFontDemo from "./PageFontDemo"
 import PageAddType from "./PageAddType"
 import Firebase from "./Firebase"
 import {
-  BrowserRouter as Router,
+  HashRouter,
   Switch,
   Route,
   Link
@@ -13,7 +13,7 @@ import {
 const Routing = () => {
   return (
     <MainLayout>
-      <Router>
+      <HashRouter basename='/'>
         <div>
           <nav className="hidden">
             <ul>
@@ -43,7 +43,7 @@ const Routing = () => {
             </Route>
           </Switch>
         </div>
-      </Router>
+      </HashRouter>
     </MainLayout>
   );
 }

@@ -5,6 +5,8 @@ import customFontsReducer from '../reducer/customFontsReducer';
 import firebase from "firebase/app";
 import "firebase/firestore";
 import '../firebase/conf'
+import "firebase/analytics"
+import "firebase/auth"
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
 const MainLayout = ({ children }) => {
