@@ -3,7 +3,6 @@ import firebase from "firebase/app";
 import "firebase/firestore";
 import '../firebase/conf'
 import { useCollectionData } from 'react-firebase-hooks/firestore';
-import Type from '../components/Type';
 
 const Firebase = () => {
   const [values, loading, error] = useCollectionData(
@@ -15,21 +14,17 @@ const Firebase = () => {
 
   console.log(values)
   return (
-    <div>
+    <ul className="list-decimal list-inside">
       {error && <strong>Error: {JSON.stringify(error)}</strong>}
       {loading && <span>Collection: Loading...</span>}
       {values && (
         values.map((font, i) => (
-          <div key={i}>
-            {font.id}
-            <div>
-              <Type name={font.name} variations={font.variations} />
-              {JSON.stringify(font)},{' '}
-            </div>
-          </div>
+          <li key={i}>
+            <span className="font-bold">{font.name}</span> : {font.fileName}
+          </li>
         ))
       )}
-    </div>
+    </ul>
   )
 }
 
