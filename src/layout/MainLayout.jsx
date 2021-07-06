@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react'
+import React, { useEffect, useReducer } from 'react'
 import stylePatternContext from '../contexts/stylePattern';
 import { addFont } from "../fonts/fontFace"
 import customFontsReducer from '../reducer/customFontsReducer';
@@ -10,6 +10,26 @@ import "firebase/auth"
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
 const MainLayout = ({ children }) => {
+
+
+  const [fonts, loading, error] = useCollectionData(
+    firebase.firestore().collection('fonts').orderBy('name'),
+    {
+      snapshotListenOptions: { includeMetadataChanges: true },
+    }
+  );
+
+  if (error) {
+    console.log(error)
+  }
+
+  useEffect(() => {
+    if (!loading) {
+      fonts.forEach(font => {
+        addFont(font.name, font.fileName)
+      })
+    }
+  }, [fonts, loading])
 
   const initialStylePattern = {
     selectedField: "",
@@ -57,26 +77,9 @@ const MainLayout = ({ children }) => {
   }
   const [state, dispatch] = useReducer(customFontsReducer, initialStylePattern);
 
-  const [fonts, loading, error] = useCollectionData(
-    firebase.firestore().collection('fonts').orderBy('name'),
-    {
-      snapshotListenOptions: { includeMetadataChanges: true },
-    }
-  );
-
-  if (error) {
-    console.log(error)
-  }
-  if (!loading) {
-    fonts.forEach(font => {
-      addFont(font.name, font.fileName)
-    })
-  }
-
   return (
     <stylePatternContext.Provider value={{ state, dispatch }}>
-      {loading && (<div>Loading...</div>)}
-      {children}
+      {loading ? (<div>Loading...</div>) : (<>{children}</>)}
     </stylePatternContext.Provider>
   )
 }
