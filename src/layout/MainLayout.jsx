@@ -79,7 +79,19 @@ const MainLayout = ({ children }) => {
 
   return (
     <stylePatternContext.Provider value={{ state, dispatch }}>
-      {loading ? (<div>Loading...</div>) : (<>{children}</>)}
+      {loading ? (<div>Loading...</div>) : (
+        <>
+          <div>
+            <div className="">
+              <div className="absolute top-0 left-0 h-screen v-screen right-0 bg-gradient-to-br from-yellow-400 via-red-500 to-pink-500"></div>
+              <div className="mix-blend-screen bg-white">
+                {children}
+              </div>
+            </div>
+            <div className="bg-green-400 absolute top-0 left-0 h-screen v-screen"></div>
+          </div>
+        </>
+      )}
     </stylePatternContext.Provider>
   )
 }
